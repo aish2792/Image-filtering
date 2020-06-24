@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kaleidoscope :{% block title %}{% endblock %}</title>
+    <link href="/packages/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap" rel="stylesheet">
+    <link href="/css/main.css" rel="stylesheet">
+    <script src="/packages/lib/jquery/jquery-3.3.1.min.js"></script>
+    <script src="/packages/lib/popper/popper.min.js"></script>
+    <script src="/packages/lib/bootstrap/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+<!--    <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">-->
+<!--      <div class="container">-->
+<!--        <div class="row">-->
+<!--          <div class="col-6">-->
+<!--          <a class="navbar-brand" href="/">Kaleidoscope</a>-->
+<!--          </div>-->
+<!--          <div class="col-6 ">-->
+<!--          <a class="btn btn-dark" id="inpFileButton">Upload Image</a>-->
+<!--          </div>-->
+<!--          <div class="collapse navbar-collapse" id="navbarResponsive"></div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </nav>-->
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand logo" href="/">Kaleidoscope</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link {% if active == 'Pictures' %} active{% endif %}" href="/pictures">Pictures</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link {% if active == 'About Us' %} active{% endif %}" href="/aboutus">About Us</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <a class="btn btn-dark {% if active == 'Upload Image' %} active{% endif %}" href="/uploadImage">Upload Image</a>
+    </form>
+  </div>
+</nav>
+    <main>
+      <div class="container content">
+          {% block content %}{% endblock %}
+      </div>
+    </main>
+  </body>
+</html>
